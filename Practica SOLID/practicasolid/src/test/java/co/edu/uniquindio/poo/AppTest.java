@@ -23,7 +23,7 @@ public class AppTest {
      */
     @Test
     public void enlistarPersonaje() {
-        LOG.info("Iniciado test shouldAnswerWithTrue");
+        LOG.info("Iniciado test enlistar personaje");
         JuegoRPG juego1 = new JuegoRPG("Arcangel", null);
         Jugador juga1 = new Jugador("Jaider", null);
         Personaje mago1 = new Mago("Pechy", "Anuelaaa", "Increible personaje de las masmorras", 0, 0, 0, 0);
@@ -33,21 +33,28 @@ public class AppTest {
         assertEquals(1, juga1.getListaPersonajes().size());
 
 
-        LOG.info("Finalizando test shouldAnswerWithTrue");
+        LOG.info("Finalizando test enlistar personaje");
     }
 
     @Test
     public void enlistarPersonajeRepetido() {
-        LOG.info("Iniciado test shouldAnswerWithTrue");
+        LOG.info("Iniciado test enlistar personaje repetido");
         JuegoRPG juego1 = new JuegoRPG("Arcangel", null);
         Jugador juga1 = new Jugador("Jaider", null);
-        Personaje mago1 = new Mago("Pechy", "Anuelaaa", "Increible personaje de las masmorras", 0, 0, 0, 0);
-        Personaje mago2 = new Mago("Pechy", "Anuelaaa", "Increible personaje de las masmorras", 0, 0, 0, 0);
+
+
+        Personaje mago1 = new Mago("Pechy", "Cr7", "Increible personaje de las masmorras", 0, 0, 0, 0);
+        Personaje mago2 = new Guerrero("Pechy", "Messi", "Increible personaje de las masmorras", 0, 0, 0, 0);
+
+
+
+
+        
 
         juga1.enlistarPersonaje(mago1);
 
         assertThrows(Throwable.class, ()-> juga1.enlistarPersonaje(mago2));
 
-        LOG.info("Finalizando test shouldAnswerWithTrue");
+        LOG.info("Finalizando test enlistar personaje repetido");
     }
 }
