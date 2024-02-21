@@ -4,10 +4,11 @@ public class Guerrero extends Personaje {
     private int fuerza;
     private int resistencia;
     private int vitalidad;
-    
-    public Guerrero(String apodo, String nombreUnico, String descripcion, int dineroInicial, int fuerza, int resistencia, int vitalidad) {   
+
+    public Guerrero(String apodo, String nombreUnico, String descripcion, int dineroInicial, int fuerza,
+            int resistencia, int vitalidad) {
         super(nombreUnico, descripcion, apodo, dineroInicial);
-    
+
         this.fuerza = fuerza;
         this.resistencia = resistencia;
         this.vitalidad = vitalidad;
@@ -36,14 +37,17 @@ public class Guerrero extends Personaje {
     public void setVitalidad(int vitalidad) {
         this.vitalidad = vitalidad;
     }
-    public void espadaAfilada(){
-        System.out.println("cortar");   
+
+    public void espadaAfilada() {
+        System.out.println("cortar");
     }
-    public void golpeDefinitivo(){
-        System.out.println("golpear");   
+
+    public void golpeDefinitivo() {
+        System.out.println("golpear");
     }
-    public void escudoProtector(){
-        System.out.println("proteger");   
+
+    public void escudoProtector() {
+        System.out.println("proteger");
     }
 
 }

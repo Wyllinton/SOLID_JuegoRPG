@@ -6,12 +6,14 @@ public class Arquero extends Personaje {
     private int agilidad;
     private int precision;
 
-    public Arquero(String apodo, String nombreUnico, String descripcion, int dineroInicial, int destreza, int agilidad, int precision) {
+    public Arquero(String apodo, String nombreUnico, String descripcion, int dineroInicial, int destreza, int agilidad,
+            int precision) {
         super(nombreUnico, descripcion, apodo, dineroInicial);
         this.destreza = destreza;
         this.agilidad = agilidad;
         this.precision = precision;
     }
+
     public int getDestreza() {
         return destreza;
     }
@@ -35,14 +37,16 @@ public class Arquero extends Personaje {
     public void setPrecision(int precision) {
         this.precision = precision;
     }
-    
-    public void disparoRapido(){
-        System.out.println("disparar");   
+
+    public void disparoRapido() {
+        System.out.println("disparar");
     }
-    public void flechaVenenosa(){
-        System.out.println("envenenar");   
+
+    public void flechaVenenosa() {
+        System.out.println("envenenar");
     }
-    public void tiroCertero(){
-        System.out.println("tirar");   
+
+    public void tiroCertero() {
+        System.out.println("tirar");
     }
 }

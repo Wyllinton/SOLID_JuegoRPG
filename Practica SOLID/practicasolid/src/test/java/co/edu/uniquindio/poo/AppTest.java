@@ -9,7 +9,6 @@ package co.edu.uniquindio.poo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
@@ -28,16 +27,15 @@ public class AppTest {
         JuegoRPG juego1 = new JuegoRPG("Arcangel", null);
         Jugador juga1 = new Jugador("Jaider", null);
         Personaje mago1 = new Mago("Pechy", "Anuelaaa", "Increible personaje de las masmorras", 0, 0, 0, 0);
-        Personaje mago2 = new Mago("Pechy", "Anuelaaa", "Increible personaje de las masmorras", 0, 0, 0, 0);
+        
+        juga1.enlistarPersonaje(mago1);
 
-        mago1.enlistarPersonaje(mago1);
+        assertEquals(1, juga1.getListaPersonajes().size());
 
-        assertEquals(1, mago1.getListaPersonajes().size());
-
-        assertThrows(Throwable.class, ()-> mago2.enlistarPersonaje(mago2));
 
         LOG.info("Finalizando test shouldAnswerWithTrue");
     }
+
     @Test
     public void enlistarPersonajeRepetido() {
         LOG.info("Iniciado test shouldAnswerWithTrue");
@@ -46,11 +44,9 @@ public class AppTest {
         Personaje mago1 = new Mago("Pechy", "Anuelaaa", "Increible personaje de las masmorras", 0, 0, 0, 0);
         Personaje mago2 = new Mago("Pechy", "Anuelaaa", "Increible personaje de las masmorras", 0, 0, 0, 0);
 
-        mago1.enlistarPersonaje(mago1);
+        juga1.enlistarPersonaje(mago1);
 
-        assertEquals(1, mago1.getListaPersonajes().size());
-
-        assertThrows(Throwable.class, ()-> mago2.enlistarPersonaje(mago2));
+        assertThrows(Throwable.class, ()-> juga1.enlistarPersonaje(mago2));
 
         LOG.info("Finalizando test shouldAnswerWithTrue");
     }
