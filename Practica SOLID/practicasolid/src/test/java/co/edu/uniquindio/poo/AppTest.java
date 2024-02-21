@@ -23,7 +23,23 @@ public class AppTest {
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue() {
+    public void enlistarPersonaje() {
+        LOG.info("Iniciado test shouldAnswerWithTrue");
+        JuegoRPG juego1 = new JuegoRPG("Arcangel", null);
+        Jugador juga1 = new Jugador("Jaider", null);
+        Personaje mago1 = new Mago("Pechy", "Anuelaaa", "Increible personaje de las masmorras", 0, 0, 0, 0);
+        Personaje mago2 = new Mago("Pechy", "Anuelaaa", "Increible personaje de las masmorras", 0, 0, 0, 0);
+
+        mago1.enlistarPersonaje(mago1);
+
+        assertEquals(1, mago1.getListaPersonajes().size());
+
+        assertThrows(Throwable.class, ()-> mago2.enlistarPersonaje(mago2));
+
+        LOG.info("Finalizando test shouldAnswerWithTrue");
+    }
+    @Test
+    public void enlistarPersonajeRepetido() {
         LOG.info("Iniciado test shouldAnswerWithTrue");
         JuegoRPG juego1 = new JuegoRPG("Arcangel", null);
         Jugador juga1 = new Jugador("Jaider", null);

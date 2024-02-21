@@ -52,15 +52,6 @@ public class Mago extends Personaje{
     public void hechizoCuracion(){
         System.out.println("curar");   
     }
-    public void registrarMago (Mago mago){
-        boolean existeMago = buscarMagoPorNombreUnico (mago.getNombreUnico()).isPresent();
-        assert !existeMago:"El mago ya está registrado";
-        listaMagos.add(mago);
-    }
-    public Optional<Mago> buscarMagoPorNombreUnico (String nombre){
-        Predicate<Mago> condicion = mago-> mago.getNombreUnico().equals(nombre);
-        return listaMagos.stream().filter(condicion).findAny();
-    }
     @Override
     public String validarNombre() {
 

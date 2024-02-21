@@ -50,12 +50,6 @@ public abstract class Personaje implements ValidarPersonaje, RegistrarPersonaje{
         
         return null;
     }
-
-    @Override
-    public String validarNombre() {
-        
-        return null;
-    }
     @Override
     public void enlistarPersonaje(Personaje personaje){
             boolean existePersonaje = buscarPersonajePorNombreUnico (personaje.getNombreUnico()).isPresent();
