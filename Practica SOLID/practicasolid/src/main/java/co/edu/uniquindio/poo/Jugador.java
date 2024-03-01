@@ -2,14 +2,12 @@ package co.edu.uniquindio.poo;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Optional;
-import java.util.function.Predicate;
 
 public class Jugador implements ValidarNombre {
     private String idJugador;
-    private final Collection<Personaje> listaPersonajes;
+    private final Collection<PersonajeDirector> listaPersonajes;
 
-    public Jugador(String idJugador, Collection<Personaje> listaPersonajes) {
+    public Jugador(String idJugador, Collection<PersonajeDirector> listaPersonajes) {
         this.idJugador = idJugador;
         this.listaPersonajes = new ArrayList<>();
     }
@@ -22,10 +20,25 @@ public class Jugador implements ValidarNombre {
         this.idJugador = idJugador;
     }
 
-    public Collection<Personaje> getListaPersonajes() {
+    public Collection<PersonajeDirector> getListaPersonajes() {
         return listaPersonajes;
     }
 
+    @Override
+    public void enlistarPersonaje(PersonajeDirector personaje) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'enlistarPersonaje'");
+    }
+
+}
+
+
+
+
+
+
+
+/**
     @Override
     public void enlistarPersonaje(Personaje personaje) {
         boolean existePersonaje = buscarPersonajePorNombreUnico(personaje.getNombreUnico()).isPresent();
@@ -37,5 +50,4 @@ public class Jugador implements ValidarNombre {
         Predicate<Personaje> condicion = mago -> mago.getNombreUnico().equals(nombre);
         return listaPersonajes.stream().filter(condicion).findAny();
     }
-
-}
+*/

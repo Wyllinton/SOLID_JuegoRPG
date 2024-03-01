@@ -1,12 +1,12 @@
 package co.edu.uniquindio.poo;
 
-public class Arquero extends Personaje {
+public class ArqueroBuilder extends Personaje {
 
     private int destreza;
     private int agilidad;
-    private int precision;
+    private int precision;          
 
-    public Arquero(String apodo, String nombreUnico, String descripcion, int dineroInicial, int destreza, int agilidad,
+    public ArqueroBuilder(String apodo, String nombreUnico, String descripcion, int dineroInicial, int destreza, int agilidad,
             int precision) {
         super(nombreUnico, descripcion, apodo, dineroInicial);
         this.destreza = destreza;
