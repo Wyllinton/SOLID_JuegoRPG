@@ -1,24 +1,61 @@
 package co.edu.uniquindio.poo;
 
-public abstract class Personaje{
-    private String nombreUnico;
+import java.util.ArrayList;
+import java.util.List;
+
+class Personaje {
+    private String name;
+    private String characterClass;
+    private int nivel;
+    private List<String> habilidades;
+    private List <String> equipamiento;
     private String descripcion;
     private String apodo;
-    private int dineroInicial;
+    private double dineroInicial;
 
-    public Personaje(String nombreUnico, String descripcion, String apodo, int dineroInicial) {
-        this.nombreUnico = nombreUnico;
-        this.descripcion = descripcion;
-        this.apodo = apodo;
-        this.dineroInicial = dineroInicial;
+    public Personaje(){
+        this.habilidades = new ArrayList<>();
+        this.equipamiento = new ArrayList<>();
     }
 
-    public String getNombreUnico() {
-        return nombreUnico;
+    public String getName() {
+        return name;
     }
 
-    public void setNombreUnico(String nombreUnico) {
-        this.nombreUnico = nombreUnico;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCharacterClass() {
+        return characterClass;
+    }
+
+    public void setCharacterClass(String characterClass) {
+        this.characterClass = characterClass;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    public List<String> getHabilidades() {
+        return habilidades;
+    }
+
+    public void setHabilidades(List<String> habilidades) {
+        this.habilidades = habilidades;
+    }
+
+    public List<String> getEquipamiento() {
+        return equipamiento;
+    }
+
+    public void setEquipamiento(List<String> equipamiento) {
+        this.equipamiento = equipamiento;
     }
 
     public String getDescripcion() {
@@ -37,12 +74,12 @@ public abstract class Personaje{
         this.apodo = apodo;
     }
 
-    public int getDineroInicial() {
+    public double getDineroInicial() {
         return dineroInicial;
     }
 
-    public void setDineroInicial(int dineroInicial) {
+    public void setDineroInicial(double dineroInicial) {
         this.dineroInicial = dineroInicial;
     }
-
+    
 }

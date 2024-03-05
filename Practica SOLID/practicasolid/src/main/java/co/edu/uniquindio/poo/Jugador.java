@@ -28,13 +28,13 @@ public class Jugador implements ValidarNombre {
 
     @Override
     public void enlistarPersonaje(Personaje personaje) {
-        boolean existePersonaje = buscarPersonajePorNombreUnico(personaje.getNombreUnico()).isPresent();
+        boolean existePersonaje = buscarPersonajePorNombreUnico(personaje.getName()).isPresent();
         assert !existePersonaje : "El personaje ya está registrado";
         listaPersonajes.add(personaje);
     }
 
     public Optional<Personaje> buscarPersonajePorNombreUnico(String nombre) {
-        Predicate<Personaje> condicion = mago -> mago.getNombreUnico().equals(nombre);
+        Predicate<Personaje> condicion = mago -> mago.getName().equals(nombre);
         return listaPersonajes.stream().filter(condicion).findAny();
     }
 
