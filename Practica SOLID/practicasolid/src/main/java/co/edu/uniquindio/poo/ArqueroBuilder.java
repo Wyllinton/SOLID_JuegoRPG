@@ -17,9 +17,8 @@ class ArqueroBuilder implements PersonajeBuilder{
     public ArqueroBuilder(){
         this.habilidades = new ArrayList<>();
         this.equipamiento = new ArrayList<>();
-
-    
     }
+    
     //Se usa la interface y se definen los constructores de cada atributo
     @Override
     public void name(String name) {
