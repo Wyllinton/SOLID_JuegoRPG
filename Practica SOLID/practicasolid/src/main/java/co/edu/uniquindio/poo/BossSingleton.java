@@ -19,7 +19,7 @@ public class BossSingleton {
 
     public class Main {
         public static void main(String[] args) {
-            // Obtén la instancia del Singleton
+            // Obten la instancia del Singleton
             BossSingleton boss = BossSingleton.getInstance();
     
             // Accede a los atributos

@@ -11,6 +11,7 @@ public class JuegoRPG {
         this.listaJugadores = listaJugadores;
     }
 
+
     public String getNombre() {
         return nombre;
     }
@@ -22,5 +23,4 @@ public class JuegoRPG {
     public Collection<Jugador> getListaJugadores() {
         return listaJugadores;
     }
-
 }

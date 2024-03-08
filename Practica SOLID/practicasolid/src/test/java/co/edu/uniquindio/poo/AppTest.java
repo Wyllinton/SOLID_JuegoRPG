@@ -7,54 +7,41 @@
  */
 package co.edu.uniquindio.poo;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import java.util.logging.Logger;
-import org.junit.jupiter.api.Test;
+import java.util.List;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest {
-    private static final Logger LOG = Logger.getLogger(AppTest.class.getName());
+    public class prueba {
+        public static void main(String[] args) {
+        PersonajeBuilder builder = new GuerreroBuilder();
+        PersonajeDirector director = new PersonajeDirector(builder);
 
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void enlistarPersonaje() {
-        LOG.info("Iniciado test enlistar personaje");
-        JuegoRPG juego1 = new JuegoRPG("Arcangel", null);
-        Jugador juga1 = new Jugador("Jaider", null);
-        Personaje mago1 = new Mago("Pechy", "Anuelaaa", "Increible personaje de las masmorras", 0, 0, 0, 0);
-        
-        juga1.enlistarPersonaje(mago1);
+        // Construir un guerrero
+        director.constructor("Aragorn", "Guerrero", 10,
+                List.of("Espada Afilada", "Golpe Definitivo", "Escudo Protector"),
+                List.of("Espada", "Escudo"), "Héroe de Gondor", "El rey de los guerreros", 1000);
+        Personaje guerrero = builder.build();
+        System.out.println("Guerrero creado: " + guerrero);
 
-        assertEquals(1, juga1.getListaPersonajes().size());
+        // Construir un mago
+        builder = new MagoBuilder();
+        director = new PersonajeDirector(builder);
+        director.constructor("Gandalf", "Mago", 15,
+                List.of("Bola de Fuego", "Rayo Eléctrico", "Hechizo de Curación"),
+                List.of("Báculo", "Túnica"), "El mago gris", "Gandalf el Blanco", 500);
+        Personaje mago = builder.build();
+        System.out.println("Mago creado: " + mago);
 
-
-        LOG.info("Finalizando test enlistar personaje");
+        // Construir un arquero
+        builder = new ArqueroBuilder();
+        director = new PersonajeDirector(builder);
+        director.constructor("Legolas", "Arquero", 12,
+                List.of("Disparo Rápido", "Flecha Venenosa", "Tiro Certero"),
+                List.of("Arco", "Flechas"), "El elfo de los bosques", "Príncipe de los arqueros", 800);
+        Personaje arquero = builder.build();
+        System.out.println("Arquero creado: " + arquero);
     }
+} 
 
-    @Test
-    public void enlistarPersonajeRepetido() {
-        LOG.info("Iniciado test enlistar personaje repetido");
-        JuegoRPG juego1 = new JuegoRPG("Arcangel", null);
-        Jugador juga1 = new Jugador("Jaider", null);
-
-
-        Personaje mago1 = new Mago("Pechy", "Cr7", "Increible personaje de las masmorras", 0, 0, 0, 0);
-        Personaje mago2 = new Guerrero("Pechy", "Messi", "Increible personaje de las masmorras", 0, 0, 0, 0);
-
-
-
-
-        
-
-        juga1.enlistarPersonaje(mago1);
-
-        assertThrows(Throwable.class, ()-> juga1.enlistarPersonaje(mago2));
-
-        LOG.info("Finalizando test enlistar personaje repetido");
-    }
-}
+      
